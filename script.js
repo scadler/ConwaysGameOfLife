@@ -11,34 +11,30 @@ $("#autoStep").click(function(){
 })
 function step(){
 var i = 0
-    while(i < 89){
+    while(i < 401){
         $(`#s${i}`).empty();
         checkBorders(i)
         i++
     }
-    if( i === 89)
+    if( i === 401)
     var a = 0
-        while(a < 89){
-        changeStatus(a)
+        while(a < 401){
+        // changeStatus(a)
         a++
         }
 }
 function autostep(auto){
     if(auto === true){
         step()
-        setTimeout(autostep, 500,s.auto)
+        setTimeout(autostep, 200,s.auto)
     }
-    // else{
-    //     clearTimeout(autostep)
-    // }
 }
 function checkBorders(i){
     var neighborCounter = 0
-    console.log($(`#s${i}`).css("background-color"))
-    if( (i-9)%10===0){
-
-    }
-    else if(i===2){
+    // if( (i-20)%21===0){
+    // }
+    // else 
+    if(i===2){
     
     if($(`#s${i-1}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
@@ -46,25 +42,25 @@ function checkBorders(i){
     if($(`#s${i+1}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i+9}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+20}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i+10}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+21}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i+11}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+22}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
     $(`#s${i}`).append(`<p id="${neighborCounter}"> ${neighborCounter} </p>`)
 }
     else{
-    if($(`#s${i-11}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i-22}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i-10}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i-21}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i-9}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i-20}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
     if($(`#s${i-1}`).css("background-color")==='rgb(0, 0, 0)'){
@@ -73,17 +69,16 @@ function checkBorders(i){
     if($(`#s${i+1}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i+9}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+20}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i+10}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+21}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i+11}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+22}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
     $(`#s${i}`).append(`<p class="id" id="${neighborCounter}"> ${neighborCounter} </p>`)
-    console.log(($(`#s${i}`).contents().attr('class') === "alive") +"    "+i+"    "+neighborCounter)
     }
 }
 function changeStatus(a){
