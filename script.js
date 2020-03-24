@@ -12,15 +12,15 @@ $("#autoStep").click(function(){
 function step(){
 var i = 0
     while(i < 401){
-        $(`#s${i}`).empty();
-        $(`#s${i}`).append(i)
-        // checkBorders(i)
+        // $(`#s${i}`).append(i)
+        checkBorders(i)
         i++
+        $(`#s${i}`).empty();
     }
     if( i === 401)
     var a = 0
         while(a < 401){
-        // changeStatus(a)
+        changeStatus(a)
         a++
         }
 }
@@ -32,11 +32,7 @@ function autostep(auto){
 }
 function checkBorders(i){
     var neighborCounter = 0
-    // if( (i-20)%21===0){
-    // }
-    // else 
     if(i===2){
-    
     if($(`#s${i-1}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
@@ -52,7 +48,7 @@ function checkBorders(i){
     if($(`#s${i+22}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    $(`#s${i}`).append(`<p id="${neighborCounter}"> ${neighborCounter} </p>`)
+    $(`#s${i}`).append(`<p class="cellID" id="${neighborCounter}"> ${neighborCounter} </p>`)
 }
     else{
     if($(`#s${i-21}`).css("background-color")==='rgb(0, 0, 0)'){
@@ -79,7 +75,7 @@ function checkBorders(i){
     if($(`#s${i+21}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    $(`#s${i}`).append(`<p class="id" id="${neighborCounter}"> ${neighborCounter} </p>`)
+    $(`#s${i}`).append(`<p class="cellID" id="${neighborCounter}"> ${neighborCounter} </p>`)
     }
 }
 function changeStatus(a){
@@ -109,3 +105,30 @@ $(".cell").mouseenter(function(){
         }
     }
 });
+$(".cell").mousedown(function(){
+        if($(this).css("background-color")!=='rgb(0, 0, 0)'){
+         $(this).css('background-color', "rgb(0, 0, 0)")
+        }
+        else{
+            $(this).css('background-color', "rgb(255, 255, 255)")
+        }
+});
+$("#clear").click(function(){
+    var cell = 0
+    while(cell < 401){
+        $(`#s${cell}`).css('background-color', "rgb(255, 255, 255)");
+        cell++
+    }
+});
+var gliderCells = ["2","20","22","41","42"]
+$("#glider").click(function(){
+   drawCells(gliderCells)
+});
+function drawCells(array){
+    length = array.length
+    index = 0
+    while(index < length){
+        $(`#s${array[index]}`).css('background-color', "rgb(0, 0, 0)")
+        index++
+    }
+}
