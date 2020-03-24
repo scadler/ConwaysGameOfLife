@@ -13,7 +13,8 @@ function step(){
 var i = 0
     while(i < 401){
         $(`#s${i}`).empty();
-        checkBorders(i)
+        $(`#s${i}`).append(i)
+        // checkBorders(i)
         i++
     }
     if( i === 401)
@@ -26,7 +27,7 @@ var i = 0
 function autostep(auto){
     if(auto === true){
         step()
-        setTimeout(autostep, 200,s.auto)
+        setTimeout(autostep, 300,s.auto)
     }
 }
 function checkBorders(i){
@@ -54,13 +55,13 @@ function checkBorders(i){
     $(`#s${i}`).append(`<p id="${neighborCounter}"> ${neighborCounter} </p>`)
 }
     else{
-    if($(`#s${i-22}`).css("background-color")==='rgb(0, 0, 0)'){
-         neighborCounter++
-    }
     if($(`#s${i-21}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
     if($(`#s${i-20}`).css("background-color")==='rgb(0, 0, 0)'){
+         neighborCounter++
+    }
+    if($(`#s${i-19}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
     if($(`#s${i-1}`).css("background-color")==='rgb(0, 0, 0)'){
@@ -69,13 +70,13 @@ function checkBorders(i){
     if($(`#s${i+1}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
+    if($(`#s${i+19}`).css("background-color")==='rgb(0, 0, 0)'){
+         neighborCounter++
+    }
     if($(`#s${i+20}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
     if($(`#s${i+21}`).css("background-color")==='rgb(0, 0, 0)'){
-         neighborCounter++
-    }
-    if($(`#s${i+22}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
     $(`#s${i}`).append(`<p class="id" id="${neighborCounter}"> ${neighborCounter} </p>`)
