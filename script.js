@@ -93,11 +93,19 @@ function changeStatus(a){
         $(`#s${a}`).css('background-color', "rgb(255, 255, 255)")
     }
 }
-$(".cell").click(function(){
-    if($(this).css("background-color")!=='rgb(0, 0, 0)'){
+var down = false;
+$(document).mousedown(function() {
+    down = true;
+}).mouseup(function() {
+    down = false;  
+});
+$(".cell").mouseenter(function(){
+    if(down === true){
+        if($(this).css("background-color")!=='rgb(0, 0, 0)'){
          $(this).css('background-color', "rgb(0, 0, 0)")
-    }
-    else{
-        $(this).css('background-color', "rgb(255, 255, 255)")
+        }
+        else{
+            $(this).css('background-color', "rgb(255, 255, 255)")
+        }
     }
 });
