@@ -1,5 +1,16 @@
+var s = {
+    auto:false,
+}
 $("#step").click(function(){
-    var i = 0
+    step();
+})
+$("#autoStep").click(function(){
+    s.auto = !s.auto
+    console.log(s.auto)
+    autostep(s.auto)
+})
+function step(){
+var i = 0
     while(i < 89){
         $(`#s${i}`).empty();
         checkBorders(i)
@@ -11,8 +22,16 @@ $("#step").click(function(){
         changeStatus(a)
         a++
         }
-})
-
+}
+function autostep(auto){
+    if(auto === true){
+        step()
+        setTimeout(autostep, 500,s.auto)
+    }
+    // else{
+    //     clearTimeout(autostep)
+    // }
+}
 function checkBorders(i){
     var neighborCounter = 0
     console.log($(`#s${i}`).css("background-color"))
@@ -79,5 +98,10 @@ function changeStatus(a){
     }
 }
 $(".cell").click(function(){
-
+    if($(this).css("background-color")!=='rgb(0, 0, 0)'){
+         $(this).css('background-color', "rgb(0, 0, 0)")
+    }
+    else{
+        $(this).css('background-color', "rgb(255, 255, 255)")
+    }
 });
