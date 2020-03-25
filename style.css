@@ -1,18 +1,22 @@
 #board {
-    width: 90vh;
-    height: 90vh;
+    width: 80vh;
+    height: 80vh;
     border: 1px solid #dddddd;
     margin-left: 10px;
 }
 .cell {
-    width: 4.3vh;
-    height: 4.3vh;
+    width: 3.8vh;
+    height: 3.8vh;
     float: left;
     border: 0.1vh solid #dddddd;
     background-color: #ffffff;
 }
+.exampleCell{
+    display: inline;
+}
 .button{
-    height:4.3vh;
+    height:30px;
+    width:70px;
     float:left;
     outline:none;
     border: 1px solid #dddddd;
@@ -46,7 +50,8 @@
 #stepsPerSec{
     width:150px;
     -webkit-appearance: none;
-    background-color: #d3d3d3;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
     height: 8px;
     border-radius: 5px;
 }
@@ -55,14 +60,23 @@
   appearance: none;
   width: 8px;
   height: 18px;
-  background: grey;
-  border: 1px solid #555555;
+  background-color: #cbcbcb;
+    border: 1px solid #adadad;
+  cursor: pointer;
+}
+#stepsPerSec::-webkit-slider-thumb:hover {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 18px;
+  background-color: #a1a1a1;
+    border: 1px solid #969696;
   cursor: pointer;
 }
 #page{
  display: flex;
  justify-content: space-around;
 }
-/* #interface{
-
-} */
+#interface{
+    background-color:beige;
+}

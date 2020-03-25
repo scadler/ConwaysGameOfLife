@@ -18,13 +18,14 @@ function step(){
 var i = 0
     while(i < 626){
         $(`#s${i}`).empty();
-        checkBorders(i)
+        $(`#s${i}`).append(i);
+        // checkBorders(i)
         i++
     }
     if( i === 626){
     var a = 0
         while(a < 626){
-        changeStatus(a)
+        // changeStatus(a)
         a++
         }
     }
