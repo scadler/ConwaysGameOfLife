@@ -11,15 +11,15 @@ $("#autoStep").click(function(){
 })
 function step(){
 var i = 0
-    while(i < 401){
+    while(i < 421){
         // $(`#s${i}`).append(i)
         checkBorders(i)
         i++
         $(`#s${i}`).empty();
     }
-    if( i === 401)
+    if( i === 421)
     var a = 0
-        while(a < 401){
+        while(a < 421){
         changeStatus(a)
         a++
         }
@@ -51,28 +51,28 @@ function checkBorders(i){
     $(`#s${i}`).append(`<p class="cellID" id="${neighborCounter}"> ${neighborCounter} </p>`)
 }
     else{
-    if($(`#s${i-21}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i-21}`).css("background-color")==='rgb(0, 0, 0)' && i%20 !==0){
          neighborCounter++
     }
     if($(`#s${i-20}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i-19}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i-19}`).css("background-color")==='rgb(0, 0, 0)' && (i-19)%20 !==0){
          neighborCounter++
     }
-    if($(`#s${i-1}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i-1}`).css("background-color")==='rgb(0, 0, 0)' && i%20 !==0){
          neighborCounter++
     }
-    if($(`#s${i+1}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+1}`).css("background-color")==='rgb(0, 0, 0)' && (i-19)%20 !==0){
          neighborCounter++
     }
-    if($(`#s${i+19}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+19}`).css("background-color")==='rgb(0, 0, 0)' && i%20 !==0){
          neighborCounter++
     }
     if($(`#s${i+20}`).css("background-color")==='rgb(0, 0, 0)'){
          neighborCounter++
     }
-    if($(`#s${i+21}`).css("background-color")==='rgb(0, 0, 0)'){
+    if($(`#s${i+21}`).css("background-color")==='rgb(0, 0, 0)' && (i-19)%20 !==0){
          neighborCounter++
     }
     $(`#s${i}`).append(`<p class="cellID" id="${neighborCounter}"> ${neighborCounter} </p>`)
@@ -114,17 +114,33 @@ $(".cell").mousedown(function(){
         }
 });
 $("#clear").click(function(){
+    clear()
+});
+var gliderCells = ["2","20","22","41","42"]
+var LWSSCells = ["100","103","124","140","144","161","162","163","164"]
+var MWSSCells = ["101","102","103","104","105","120","125","145","160","164","182"]
+var MWSSCells = ["102","103","120","125","146","160","166","181","182","183","184","185","186"]
+$("#glider").click(function(){
+   drawCells(gliderCells)
+});
+$("#LWSS").click(function(){
+   drawCells(LWSSCells)
+});
+$("#MWSS").click(function(){
+   drawCells(MWSSCells)
+});
+$("#HWSS").click(function(){
+   drawCells(MWSSCells)
+});
+function clear(){
     var cell = 0
     while(cell < 401){
         $(`#s${cell}`).css('background-color', "rgb(255, 255, 255)");
         cell++
     }
-});
-var gliderCells = ["2","20","22","41","42"]
-$("#glider").click(function(){
-   drawCells(gliderCells)
-});
+}
 function drawCells(array){
+    clear()
     length = array.length
     index = 0
     while(index < length){
