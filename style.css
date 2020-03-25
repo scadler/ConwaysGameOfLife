@@ -43,3 +43,19 @@
 .cellID{
     opacity:0%
 }
+#stepsPerSec{
+    width:150px;
+    -webkit-appearance: none;
+    background-color: #d3d3d3;
+    height: 8px;
+    border-radius: 5px;
+}
+#stepsPerSec::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 18px;
+  background: grey;
+  border: 1px solid #555555;
+  cursor: pointer;
+}

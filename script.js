@@ -1,6 +1,7 @@
 var s = {
     auto:false,
     trails:false,
+    stepsPerSecond:7,
 }
 $("#step").click(function(){
     step();
@@ -9,6 +10,10 @@ $("#autoStep").click(function(){
     s.auto = !s.auto
     autostep(s.auto)
 })
+$("#buttons").mousemove(function(){
+$("#stepsPerSecOutput").text($("#stepsPerSec").val())
+s.stepsPerSecond = Number($("#stepsPerSec").val())
+});
 function step(){
 var i = 0
     while(i < 421){
@@ -28,7 +33,7 @@ var i = 0
 function autostep(auto){
     if(auto === true){
         step()
-        setTimeout(autostep, 150,s.auto)
+        setTimeout(autostep, (1000/s.stepsPerSecond),s.auto)
     }
 }
 var s = {
