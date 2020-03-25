@@ -16,14 +16,14 @@ s.stepsPerSecond = Number($("#stepsPerSec").val())
 });
 function step(){
 var i = 0
-    while(i < 421){
+    while(i < 626){
         $(`#s${i}`).empty();
         checkBorders(i)
         i++
     }
-    if( i === 421){
+    if( i === 626){
     var a = 0
-        while(a < 421){
+        while(a < 626){
         changeStatus(a)
         a++
         }
@@ -184,7 +184,7 @@ $("#Trail").click(function(){
 $("#Randomize").click(function(){
     var n = 0
     randomArray = [""]
-    while(n < 201){
+    while(n < 301){
         randomArray[n] = Math.floor(Math.random()*399)
         n++
         console.log(randomArray)
