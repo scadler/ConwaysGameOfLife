@@ -2,6 +2,7 @@ var s = {
     auto:false,
     trails:false,
     stepsPerSecond:7,
+    colorScheme: ["rgb(0, 0, 0)", "rgb(255, 255, 255)", "rgb(255, 175, 5)",]
 }
 $("#step").click(function(){
     step();
@@ -18,14 +19,14 @@ function step(){
 var i = 0
     while(i < 626){
         $(`#s${i}`).empty();
-        $(`#s${i}`).append(i);
-        // checkBorders(i)
+        // $(`#s${i}`).append(i);
+        checkBorders(i)
         i++
     }
     if( i === 626){
     var a = 0
         while(a < 626){
-        // changeStatus(a)
+        changeStatus(a)
         a++
         }
     }
@@ -155,7 +156,8 @@ var gliderCells = ["2","20","22","41","42"]
 var LWSSCells = ["100","103","124","140","144","161","162","163","164"]
 var MWSSCells = ["101","102","103","104","105","120","125","145","160","164","182"]
 var MWSSCells = ["102","103","120","125","146","160","166","181","182","183","184","185","186"]
-var Pentadecathlon = ["186","191","204","205","207","208","209","210","212","213","226","231"]
+var GourmetA = ["10","11","30","44","45","47","48","50","55","56","62","65","67","69","75","82","83","88","97","116","117","156","157","160","170","171","172","175","177","180","181","182","190","192","196","203","210","212","217","218","219","222","224","239","242","243","282","283","302","311","316","317","324","330","332","334","337","343","344","349","351","352","354","355","369","388","389"]
+var GourmetB = ["369","388","389"]
 var Tumbler = ["84","85","89","90","104","106","108","110","124","126","128","130","146","148","165","166","168","169","185","186","188","189"]
 var Firework = ["131","132","146","147","148","149","151","152","166","167","170","172","188","192","207","211","227","229","232","233","247","248","250","251","252","253","267","268"]
 $("#glider").click(function(){
@@ -170,8 +172,8 @@ $("#MWSS").click(function(){
 $("#HWSS").click(function(){
    drawCells(MWSSCells)
 });
-$("#Pentadecathlon").click(function(){
-   drawCells(Pentadecathlon)
+$("#Gourmet").click(function(){
+   drawCells(GourmetA,GourmetB)
 });
 $("#Tumbler").click(function(){
    drawCells(Tumbler)
@@ -199,12 +201,12 @@ function clear(){
         cell++
     }
 }
-function drawCells(array){
+function drawCells(arrayA,arrayB){
     clear()
-    length = array.length
+    length = arrayA.length
     index = 0
     while(index < length){
-        $(`#s${array[index]}`).css('background-color', "rgb(0, 0, 0)")
+        $(`#s${arrayA[index]}`).css('background-color', "rgb(0, 0, 0)")
         index++
     }
 }
