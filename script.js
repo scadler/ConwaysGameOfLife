@@ -1,35 +1,44 @@
 var s = {
     auto:false,
+    trails:false,
 }
 $("#step").click(function(){
     step();
 })
 $("#autoStep").click(function(){
     s.auto = !s.auto
-    console.log(s.auto)
     autostep(s.auto)
 })
 function step(){
 var i = 0
     while(i < 421){
         // $(`#s${i}`).append(i)
+        $(`#s${i}`).empty();
         checkBorders(i)
         i++
-        $(`#s${i}`).empty();
     }
-    if( i === 421)
+    if( i === 421){
     var a = 0
         while(a < 421){
         changeStatus(a)
         a++
         }
+    }
 }
 function autostep(auto){
     if(auto === true){
         step()
-        setTimeout(autostep, 300,s.auto)
+        setTimeout(autostep, 150,s.auto)
     }
 }
+var s = {
+    auto:false,
+    trails:false,
+    heatmap:true,
+}
+$("#step").click(function(){
+    step();
+})
 function checkBorders(i){
     var neighborCounter = 0
     if(i===2){
@@ -85,9 +94,18 @@ function changeStatus(a){
     else if($(`#s${a}`).contents().attr('id') === "3"){
             $(`#s${a}`).css('background-color', "rgb(0, 0, 0)")
     }
+    else if(s.trails === true){
+        if($(`#s${a}`).css("background-color")==='rgb(0, 0, 0)'){
+            $(`#s${a}`).css('background-color', "rgb(255, 175, 175)")
+        }
+        else{
+            $(`#s${a}`).css('background-color', "rgb(255, 255, 255)")
+        }
+    }
     else{
         $(`#s${a}`).css('background-color', "rgb(255, 255, 255)")
     }
+
 }
 var down = false;
 $(document).mousedown(function() {
@@ -151,6 +169,9 @@ $("#Pentadecathlon").click(function(){
 });
 $("#Tumbler").click(function(){
    drawCells(Tumbler)
+});
+$("#Trail").click(function(){
+   s.trails = !s.trails
 });
 $("#Randomize").click(function(){
     var n = 0
