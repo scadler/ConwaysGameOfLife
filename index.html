@@ -421,17 +421,19 @@
         <ol>
             <li>A living (black) cell with two or three living neighbors lives to the next generation</li>
             <li>A dead (white) cell with exactly three neighbor becomes a live cell in the next generation</li>
-            <li>All other live cells die in the next generation, all other dead cell stay dead</li>
+            <li>All other live cells die in the next generation, all other dead cells stay dead</li>
         </ol>
     </p>
 </div>
  <div id="buttons">
- <p id="rangeP"> <input id="stepsPerSec" type="range" min="1" max="30" step="1" value="7"> Steps Per Second: <span id="stepsPerSecOutput">7</span></input> </p>
- <p>
+ <p id="rangeP"> <input id="stepsPerSec" type="range" min="1" max="3" step="1" value="2"> Step Speed: <span id="stepsPerSecOutput">Medium</span></input> </p>
+    <div id="options">
         <button class="button" id="step">Step</button>
         <button class="button" id="autoStep">Auto Step</button>
         <button class="button" id="clear">Clear</button>
-        <button class="button" id="Trail">Trail</button>
+        <button class="button" id="Trail">Trails</button>
+    </div>
+    <div id="patterns">
         <button class="button" id="glider">Glider</button>
         <button class="button" id="LWSS">LWSS</button>
         <button class="button" id="MWSS">MWSS</button>
@@ -439,8 +441,8 @@
         <button class="button" id="Gourmet">Gourmet</button>
         <button class="button" id="Tumbler">Tumbler</button>
         <button class="button" id="Firework">Firework</button>
-        <button class="button" id="Randomize">Randomize</button>
-        </p>
+        <button class="button" id="Randomize">Random</button>
+    </div>
         
 </div>
     
