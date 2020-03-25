@@ -43,9 +43,6 @@ var s = {
     trails:false,
     heatmap:true,
 }
-$("#step").click(function(){
-    step();
-})
 function checkBorders(i){
     var neighborCounter = 0
     if(i===2){
