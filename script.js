@@ -17,7 +17,6 @@ s.stepsPerSecond = Number($("#stepsPerSec").val())
 function step(){
 var i = 0
     while(i < 421){
-        // $(`#s${i}`).append(i)
         $(`#s${i}`).empty();
         checkBorders(i)
         i++
