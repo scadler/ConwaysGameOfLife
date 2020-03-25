@@ -120,6 +120,7 @@ var gliderCells = ["2","20","22","41","42"]
 var LWSSCells = ["100","103","124","140","144","161","162","163","164"]
 var MWSSCells = ["101","102","103","104","105","120","125","145","160","164","182"]
 var MWSSCells = ["102","103","120","125","146","160","166","181","182","183","184","185","186"]
+var Pentadecathlon = ["186","191","204","205","207","208","209","210","212","213","226","231"]
 $("#glider").click(function(){
    drawCells(gliderCells)
 });
@@ -131,6 +132,9 @@ $("#MWSS").click(function(){
 });
 $("#HWSS").click(function(){
    drawCells(MWSSCells)
+});
+$("#Pentadecathlon").click(function(){
+   drawCells(Pentadecathlon)
 });
 function clear(){
     var cell = 0

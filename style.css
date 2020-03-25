@@ -11,8 +11,16 @@
     border: 0.1vh solid #dddddd;
     background-color: #ffffff;
 }
-.id{
-    color:blue;
+.button{
+    outline:none;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+.button:active{
+      background-color: #cbcbcb;
+      border: 1px solid #adadad;
+  -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
 }
 .alive{
     background-color:black;
