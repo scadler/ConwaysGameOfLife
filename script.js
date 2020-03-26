@@ -170,7 +170,7 @@ $("#HWSS").click(function(){
    drawCells(MWSSCells)
 });
 $("#Gourmet").click(function(){
-   drawCells(GourmetA,GourmetB)
+   drawCells(GourmetA)
 });
 $("#Tumbler").click(function(){
    drawCells(Tumbler)
